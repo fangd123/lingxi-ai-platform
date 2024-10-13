@@ -1,0 +1,30 @@
+version: "3"  # optional since v1.27.0
+services:
+ bert_app:
+   image: ''
+   expose:
+     - 80
+   volumes:
+     - ./deploy/:/app
+     - bert_app:/app/log
+   labels:
+     - "traefik.enable=true"
+     - "traefik.docker.network=traefik"
+     - "traefik.http.routers.bert_app.middlewares=gzip@file, bert_app@docker"
+     - "traefik.http.routers.bert_app.entrypoints=http"
+     - "traefik.http.routers.bert_app.rule=Host(`${DOMAIN}`)  && PathPrefix(`${API}`) "
+     - "traefik.http.middlewares.bert_app.stripprefix.prefixes=${API}"
+   networks:
+     - traefik
+   environment:
+     - REDIS_DATABASE_URI=${REDIS_DATABASE_URI}
+   restart: always
+   deploy:
+     resources:
+       reservations:
+         devices:
+           - driver: nvidia
+             device_ids: ['1']
+             capabilities: [gpu]
+volumes:
+ bert_app: { }

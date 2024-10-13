@@ -1,0 +1,1 @@
+python -m onnxruntime.transformers.optimizer --input raw.onnx --output fp16.onnx --float16

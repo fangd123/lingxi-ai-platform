@@ -1,0 +1,14 @@
+name: lingxi_dl
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch
+  - pytorch-cuda=12.4
+  - cudnn
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+  - sympy
