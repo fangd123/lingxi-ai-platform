@@ -1,6 +1,7 @@
 # Lingxi AI Algorithm Engineering Solution
 
-![](https://img.shields.io/badge/LICENSE-MIT-green)
+![](https://img.shields.io/badge/LICENSE-Apache2.0-green)
+
 
 [English](README_EN.md) | [中文](README.md)
 

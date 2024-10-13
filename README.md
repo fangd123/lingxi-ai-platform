@@ -1,6 +1,6 @@
 # 灵犀AI算法工程化解决方案
 
-![](https://img.shields.io/badge/LICENSE-MIT-green)
+![](https://img.shields.io/badge/LICENSE-Apache2.0-green)
 
 
 [English](README_EN.md) | [中文](README.md)
